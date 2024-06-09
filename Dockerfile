@@ -1,4 +1,4 @@
 FROM node:14-alpine
-WORKDIR /app
+WORKDIR /usr/src/app
 COPY . .
 CMD ["node", "index.js"]
