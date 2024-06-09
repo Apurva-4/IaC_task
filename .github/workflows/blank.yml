@@ -33,7 +33,7 @@ jobs:
         IMAGE_TAG: latest  # You can use "latest" or specify a version number
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -y
     - name: Deploy to ECS
       env:
         ECS_CLUSTER: hello-world-cluster
