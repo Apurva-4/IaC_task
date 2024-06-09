@@ -39,8 +39,6 @@ jobs:
       env:
         ECS_CLUSTER: hello-world-cluster
         ECS_SERVICE: hello-world-service
-
-        IMAGE_URI: ${{ steps.login-ecr.outputs.registry }}/hello-world
         IMAGE_URI: ${{ steps.login-ecr.outputs.registry }}/hello-world
 
       run: |
