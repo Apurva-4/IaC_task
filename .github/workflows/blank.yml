@@ -35,7 +35,7 @@ jobs:
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-     - name: Deploy to ECS
+    - name: Deploy to ECS
       env:
         ECS_CLUSTER: hello-world-cluster
         ECS_SERVICE: hello-world-service
