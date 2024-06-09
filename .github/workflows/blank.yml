@@ -1,7 +1,14 @@
-name: Build and push image to ECR
-on: push
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  build:
+  deploy:
+    runs-on: ubuntu-latest
+
     name: Build Image
     runs-on: ubuntu-latest
     steps:
