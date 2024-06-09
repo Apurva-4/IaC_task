@@ -30,7 +30,7 @@ jobs:
 
     - name: Build, tag, and push image to Amazon ECR
       env:
-        ECR_REGISTRY: AP-REG
+        ECR_REGISTRY: ap-reg
         ECR_REPOSITORY: hello-world
         IMAGE_TAG: latest  # You can use "latest" or specify a version number
       run: |
