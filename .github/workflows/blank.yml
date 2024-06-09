@@ -35,9 +35,6 @@ jobs:
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY
-      run: |
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY
     - name: Deploy to ECS
       env:
         ECS_CLUSTER: hello-world-cluster
