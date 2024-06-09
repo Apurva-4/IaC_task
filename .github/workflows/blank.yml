@@ -1,11 +1,14 @@
 name: CI/CD Pipeline
+
 on:
   push:
     branches:
       - main
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -17,7 +20,10 @@ jobs:
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
       with:
-        region: ${{ secrets.AWS_REGION }}
+        region: us-west-2  # Specify your AWS region here
+        registry: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
+        username: AWS
+        password: ${{ secrets.AWS_ACCESS_TOKEN }}
 
     - name: Build, tag, and push image to Amazon ECR
       env:
